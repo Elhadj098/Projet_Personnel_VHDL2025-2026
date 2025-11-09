@@ -35,6 +35,37 @@ Le circuit est **purement combinatoire** (pas d’horloge, pas de mémoire).
 ## Code VHDL
 
 ```vhdl
+
+-------------------------------------------------------------------------------
+-- Nom du fichier     : comparateur_3_entrees.vhd
+-- Titre du projet    : Comparateur parallèle à trois entrées (A, B, C)
+-- Auteur             : Elhadji FALL
+-- Date de création   : 09/11/2025
+-- Description        :
+--   Ce programme implémente un comparateur logique combinatoire à trois entrées
+--   de 8 bits (A, B et C). 
+--   Le circuit compare toutes les paires possibles (A/B, A/C, B/C) et génère
+--   neuf signaux de sortie :
+--       - A_sup_B, A_egal_B, A_inf_B
+--       - A_sup_C, A_egal_C, A_inf_C
+--       - B_sup_C, B_egal_C, B_inf_C
+--
+--   Chaque signal de sortie prend la valeur '1' lorsque la condition associée
+--   est vraie, sinon '0'.
+--
+-- Technologies utilisées :
+--   - Bibliothèque IEEE.STD_LOGIC_1164
+--   - Bibliothèque IEEE.NUMERIC_STD pour les comparaisons sur type unsigned
+--
+-- Remarques :
+--   - Les entrées A, B et C sont de type STD_LOGIC_VECTOR(7 downto 0)
+--     et sont converties en type UNSIGNED pour permettre les opérations
+--     arithmétiques et de comparaison.
+--   - Le circuit est purement combinatoire (sans horloge ni mémoire).
+--
+-- Version             : 1.0
+-------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
